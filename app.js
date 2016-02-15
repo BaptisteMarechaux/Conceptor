@@ -15,23 +15,27 @@ var MongoClient = require('mongodb').MongoClient;
 
 //Requests------------------------------------------------------------------
 
- app.get("/", function(req, res) {
-     res.sendFile(__dirname + '/public/views/index.html');
- });
+app.get("/", function(req, res) {
+    res.sendFile(__dirname + '/public/views/index.html');
+});
 
- /* serves all the static files */
+app.get("/ludos", function(req, res) {
+    res.sendFile(__dirname + '/public/views/ludos.html');
+});
 
- app.use("/public", express.static( __dirname + '/public'));
+/* serves all the static files */
 
- //--------------------------------------------------------------------------
+app.use("/public", express.static( __dirname + '/public'));
 
- //Initialize Server---------------------------------------------------------
+//--------------------------------------------------------------------------
 
- var port = process.env.PORT || 8000;
- var server = app.listen(port, function() {
-     console.log("Listening on " + port);
- });
+//Initialize Server---------------------------------------------------------
 
- var io = require('socket.io')(server);
+var port = process.env.PORT || 8000;
+var server = app.listen(port, function() {
+    console.log("Listening on " + port);
+});
 
- //--------------------------------------------------------------------------
+var io = require('socket.io')(server);
+
+//--------------------------------------------------------------------------

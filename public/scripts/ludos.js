@@ -1,0 +1,1 @@
+var CM = new ContextMenuModule.ContextMenu("userTableRow", ["Up", "Down", "Delete"], ["Up", "Down", "Delete"]);

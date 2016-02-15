@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'latolight';
+    src: url('/public/fonts/lato-light-webfont.eot');
+    src: url('/public/fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/public/fonts/lato-light-webfont.woff2') format('woff2'),
+         url('/public/fonts/lato-light-webfont.woff') format('woff'),
+         url('/public/fonts/lato-light-webfont.ttf') format('truetype'),
+         url('/public/fonts/lato-light-webfont.svg#latolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('/public/opensans-regular-webfont.eot');
+    src: url('/public/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/public/opensans-regular-webfont.woff2') format('woff2'),
+         url('/public/opensans-regular-webfont.woff') format('woff'),
+         url('/public/opensans-regular-webfont.ttf') format('truetype'),
+         url('/public/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('/public/opensans-light-webfont.eot');
+    src: url('/public/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/public/opensans-light-webfont.woff2') format('woff2'),
+         url('/public/opensans-light-webfont.woff') format('woff'),
+         url('/public/opensans-light-webfont.ttf') format('truetype'),
+         url('/public/opensans-light-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+}
+
+body {
+	font-family: latolight;
+	color : #ECF0F1;
+	padding: 0px;
+	margin: 0px;
+	background: linear-gradient(#2980b9, #3498db);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+canvas {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-style: solid;
+    border-color: #ECF0F1;
+    border-width: 1px 1px 1px 1px;
+}
+
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    padding-left: 2%;
+    padding-bottom: 1%;
+
+    border-style: solid;
+    border-color: #ECF0F1;
+    border-width: 0px 0px 2px 0px;
+}
+
+h2 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    padding-top: 1%;
+
+    text-align: center;
+}
+
+p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    padding-top: 1%;
+
+    text-align: center;
+}
