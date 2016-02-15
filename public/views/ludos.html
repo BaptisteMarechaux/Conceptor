@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/public/style/ludos.css" />
+	<link rel="stylesheet" href="/public/style/ludos.css" />
+	<link rel="stylesheet" href="/public/style/context.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>LUDOS</title>
+	<script src="/public/scripts/context.js"></script>
+	<script src="/public/scripts/utils/easeljs-0.8.2.min.js"></script>
+	<script src="/public/scripts/utils/tweenjs-0.6.2.min.js"></script>
+	<script src="/public/scripts/MYG.js"></script>
 </head>
 <body>
-	<div id="content">
+	<div id="content" class="content">
 		<h1 id="mainTitle">L U D O S</h1>
 		<h2>M Y G</h2>
-		<canvas width="800" height="450"></canvas>
+		<canvas width="800" height="450" id="MYG-Game-canvas"></canvas>
 		<p>Mystery Yakemono Game</p>
 	</div>
-	
+	<script src="/public/scripts/ludos.js"></script>
 </body>
 </html>

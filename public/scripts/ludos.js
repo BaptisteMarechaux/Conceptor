@@ -1,1 +1,4 @@
-var CM = new ContextMenuModule.ContextMenu("userTableRow", ["Up", "Down", "Delete"], ["Up", "Down", "Delete"]);
+var CM = new ContextMenuModule.ContextMenu("content", ["Up", "Down", "Delete"], ["Up", "Down", "Delete"]);
+
+var MYGGame = new MYG.Game("MYG-Game-canvas");
+
