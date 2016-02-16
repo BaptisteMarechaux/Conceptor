@@ -1,6 +1,8 @@
 var MYG = (function() {
 	var self = {};
 
+	var instance; 
+
 	gameStates = {
 		waiting : 0,
 		textiswriting : 1,
@@ -10,6 +12,7 @@ var MYG = (function() {
 	}
 
 	self.Game = function (_canvas) {
+		instance = this;
 		this.manager;
 		this.canvas = _canvas;
 		this.stage = new createjs.Stage(_canvas);
@@ -81,26 +84,28 @@ var MYG = (function() {
 
 			var t = this;
 
-			this.stage.addEventListener("click", function () {
-				console.log(t.content);
-				for(var i=0;i<t.content.length;i++) {
-					createjs.Tween.removeTweens (t.content[i]);
-					createjs.Tween.get(t.content[i], { loop: false })
-					.to({alpha : 0 }, 500, createjs.Ease.getPowInOut(4));
-
-					t.stage.removeChild(t.content[i]);
-				}
-				t.introScene();
-			});
+			this.stage.addEventListener("click", t.goToIntroScene);
 
 		},
+		goToIntroScene : function () {
+			console.log(instance);
+			for(var i=0;i<instance.content.length;i++) {
+				createjs.Tween.removeTweens (instance.content[i]);
+				createjs.Tween.get(instance.content[i], { loop: false })
+				.to({alpha : 0 }, 500, createjs.Ease.getPowInOut(4));
+
+				instance.stage.removeChild(instance.content[i]);
+			}
+			instance.introScene();
+		},
 		introScene : function () {
+			this.stage.removeEventListener("click", this.goToIntroScene);
 			this.gameState = gameStates.waiting;
 			dialogueManager =  new DialogueManager(1);
 
 			var background = new createjs.Shape();
 			background.graphics.beginFill("#4D9FF2").drawRect(0,0, 1920, 1080);
-			background.alpha = 0;
+			background.alpha = 1;
 
 			var dText = new createjs.Text("Start", "64px open_sanslight", "#ECF0F1");
 			dText.textBaseline = "top";
@@ -113,10 +118,11 @@ var MYG = (function() {
 			textBox.graphics.beginFill("#000000").drawRect(0,0, 1900, 300);
 			textBox.x = 10;
 			textBox.y = 770;
+			textBox.alpha = 0;
 
 			this.stage.addChild(background);
-			this.stage.addChild(dText);
 			this.stage.addChild(textBox);
+			this.stage.addChild(dText);
 
 			createjs.Tween.get(background, { loop: false })
 			.to({ alpha : 1 }, 500, createjs.Ease.getPowInOut(4));
@@ -134,6 +140,7 @@ var MYG = (function() {
 		keyInterpreter : function (e) {
 
 		},
+
 		windowResizeListener : function (e) {
 			var t = this;
 			console.log(window.screen.width);

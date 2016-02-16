@@ -15,6 +15,7 @@
 		write : function (wString) {
 			var s; //final string to be returned
 			
+			//requestAnimationFrame(this.write);
 			return s;
 		}
 	}
