@@ -3,7 +3,7 @@
 
 		this.textSpeed = _speed;
 
-		this.writtedText;
+		this.writtenText;
 
 		this._initialize();
 	}
@@ -18,6 +18,20 @@
 			//requestAnimationFrame(this.write);
 			return s;
 		}
+	}
+
+	window.requestAnimationFrame(function () {
+		return  window.requestAnimationFrame ||
+				window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame ||
+				function(callback) {
+					window.setTimeout(callback, 1000/60);
+				}
+	});
+
+	function animate() {
+		requestAnimationFrame(animate);
+
 	}
 
 	return DialogueManager;
