@@ -5,23 +5,18 @@ var PF = (function (){
 	var centerButtonClicked = false;
 	var centerButtonHovered = false;
 	var items;
-	var clickMeCenterText;
 
 	self.initialize = function() {
 		centerButton = document.getElementById("centerButton");
-		clickMeCenterText = document.getElementById("clickMeCenterText");
 		items = document.getElementsByClassName("menuItem");
 
 		centerButton.addEventListener("mouseover", function() {
 			centerButtonHovered = true;
-			if(!centerButtonClicked)
-				clickMeCenterText.className = "visible";
 			document.body.style.backgroundColor = "rgba(239, 108, 0, 0.4)";
 		});
 
 		centerButton.addEventListener("mouseout", function() {
 			centerButtonHovered = false;
-			clickMeCenterText.className = "hidden";
 			if(!centerButtonClicked)
 				document.body.style.backgroundColor = "rgba(255, 255, 255, 0)";
 		});
@@ -40,8 +35,8 @@ var PF = (function (){
 
 	function showMenuItems() {
 		centerButton.className = "bigCircle active black";
-		clickMeCenterText.className = "hidden";
 		centerButton.style.webkitTransform = "";
+		document.body.style.backgroundColor = "rgba(239, 108, 0, 0.4)";
 		for(var i=0;i<items.length;i++) {
 			items[i].className = "menuItem visible";
 		}
@@ -51,7 +46,6 @@ var PF = (function (){
 		centerButton.className = "bigCircle inactive";
 		centerButtonHovered = false;
 		document.body.style.backgroundColor = "rgba(255, 255, 255, 0)";
-		clickMeCenterText.className = "hidden";
 		for(var i=0;i<items.length;i++) {
 			items[i].className = "menuItem hidden";
 		}

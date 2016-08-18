@@ -11,6 +11,15 @@
 
 }
 
+@font-face {
+    font-family: 'loraregular';
+    src: url('../fonts/lora-regular-webfont.woff2') format('woff2'),
+         url('../fonts/lora-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html {
 	background-color: #FAFAFA;
 	/*background-image: url('../img/ViewOnPlams.png');*/
@@ -63,7 +72,7 @@ body {
 }
 
 .bigCircle.active {
-	transform: scale(1.5);
+	transform: scale(1.2);
 }
 
 @keyframes pulse{
@@ -113,52 +122,108 @@ body {
 .menuItem {
 	font-family: latolight;
 	position: absolute;
-	width: 100%;
+	width: 200px;
 	height: 200px;
 	background-color: #009688;
 	top: calc(50% - 100px);
+	z-index: 2;
+	border-radius: 50%;
+	text-align: center;
+	cursor: pointer;
 
 	transition: all 0.3s;
 	-webkit-transition: all 0.3s;
 }
 
-#gamesItem {
-	top: 0px;
-	height: 50%;
-	z-index: 2;
-	background-color: #E53935;
-}
-
-#artItem {
-	color: rgb(0, 0, 0, 0.87);
+.menuItem h1 {
+	position: relative;
 	top: 50%;
-	height: 50%;
-	z-index: 2;
-
-	background-color: #FFFFFF;
+	transform: translateY(-50%);
+	margin: 0px;
+	cursor: pointer;
+	pointer-events:none;
 }
 
-#progItem {
-	z-index: 3;
+.visible#gamesItem {
+	background-color: #E53935;
+	top : calc(50% - 200px);
+	left: calc(50% + 100px);
+}
+
+.visible#artItem {
+	color: rgb(0, 0, 0, 0.87);
+	top : calc(50% - 300px);
+	left: calc(50% - 100px);
+	background-color: #45F365;
+}
+
+.visible#progItem {
+	top : calc(50% + 0px);
+	left: calc(50% + 100px);
 	background-color: #424242;
 }
 
-.hidden#progItem{
-	left : -100%;
-	
+.visible#persoItem {
+	top : calc(50% - 300px);
+	left: calc(50% - 100px);
+	background-color: #E53935;
 }
 
-.visible#progItem{
-	left : 0px;
+.menuItem.hidden{
+	top: calc(50% - 100px);
+	left: calc(50% - 100px);
 }
 
-.hidden#artItem{
-	top: 100%;
+#persoItem {
+	transition: all 0.2s;
+	-webkit-transition: all 0.2s;
 }
 
-.hidden#gamesItem{
-	top:-50%;
+#progItem {
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
 }
+
+#gamesItem {
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+}
+
+#artItem {
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+
+
+.myName {
+	font-family: loraregular;
+	position: absolute;
+	text-align: center;
+	z-index: 0;
+	color: rgba(0, 0, 0, 0.38);
+	font-size: 5em;
+
+	left: 50%;
+	top : 50%;
+
+	cursor: pointer;
+	pointer-events:none;
+
+	transform: translate(-50%, -50%);
+	z-index: 4;
+
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.bigCircle.active .myName {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+
 
 .visible {
 	opacity: 1;
