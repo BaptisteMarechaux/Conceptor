@@ -59,7 +59,7 @@ body {
 
 .bigCircle.inactive:hover {
 
-	transform: scale(1.5);
+	/*transform: scale(1.5);*/
 }
 
 .bigCircle.active {
@@ -138,14 +138,18 @@ body {
 	background-color: #FFFFFF;
 }
 
+#progItem {
+	z-index: 3;
+	background-color: #424242;
+}
+
 .hidden#progItem{
 	left : -100%;
-	z-index: 3;
+	
 }
 
 .visible#progItem{
 	left : 0px;
-	z-index: 3;
 }
 
 .hidden#artItem{
@@ -163,4 +167,8 @@ body {
 
 .hidden {
 	opacity: 0;
+}
+
+.black {
+	background-color: #424242;
 }

@@ -29,21 +29,33 @@ var PF = (function (){
 		centerButton.addEventListener("click", function() {
 			centerButtonClicked = !centerButtonClicked;
 			if(centerButtonClicked == true) {
-				centerButton.className = "bigCircle active";
-				console.log(items);
-				for(var i=0;i<items.length;i++) {
-					items[i].className = "menuItem visible";
-				}
+				showMenuItems();
 				
 			}
 			else {
-				centerButton.className = "bigCircle inactive";
-				for(var i=0;i<items.length;i++) {
-					items[i].className = "menuItem hidden";
-				}
+				hideMenuItems();
 			}
 		});
 	};
+
+	function showMenuItems() {
+		centerButton.className = "bigCircle active black";
+		clickMeCenterText.className = "hidden";
+		centerButton.style.webkitTransform = "";
+		for(var i=0;i<items.length;i++) {
+			items[i].className = "menuItem visible";
+		}
+	}
+
+	function hideMenuItems() {
+		centerButton.className = "bigCircle inactive";
+		centerButtonHovered = false;
+		document.body.style.backgroundColor = "rgba(255, 255, 255, 0)";
+		clickMeCenterText.className = "hidden";
+		for(var i=0;i<items.length;i++) {
+			items[i].className = "menuItem hidden";
+		}
+	}
 
 	return self;
 })();
