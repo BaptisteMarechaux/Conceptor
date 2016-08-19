@@ -135,6 +135,11 @@ body {
 	-webkit-transition: all 0.3s;
 }
 
+
+.menuItem:hover {
+	z-index: 3;
+}
+
 .menuItem h1 {
 	position: relative;
 	top: 50%;
@@ -152,8 +157,8 @@ body {
 
 .visible#artItem {
 	color: rgb(0, 0, 0, 0.87);
-	top : calc(50% - 300px);
-	left: calc(50% - 100px);
+	top : calc(50% + 100px);
+	left: calc(50% - 200px);
 	background-color: #45F365;
 }
 
@@ -165,7 +170,7 @@ body {
 
 .visible#persoItem {
 	top : calc(50% - 300px);
-	left: calc(50% - 100px);
+	left: calc(50% - 200px);
 	background-color: #E53935;
 }
 
@@ -222,8 +227,6 @@ body {
 .bigCircle.active .myName {
 	color: rgba(255, 255, 255, 0.5);
 }
-
-
 
 .visible {
 	opacity: 1;
