@@ -73,6 +73,9 @@ body {
 
 .bigCircle.active {
 	transform: scale(1.2);
+	transform: rotate(45deg);
+	border-radius: 5%;
+	box-shadow: 0px 0px 20px #424242;
 }
 
 @keyframes pulse{
@@ -99,6 +102,11 @@ body {
 	animation: pulse 1s ease-out 1s infinite;
 }
 
+.subCircle.active {
+	border-radius: 5%;
+	transform: rotate(45deg);
+}
+
 #clickMeCenterText {
 	position: relative;
 	top: calc(50% - 1.4em);
@@ -119,7 +127,7 @@ body {
 	-webkit-transition: opacity 0.3s;
 }
 
-.menuItem {
+.menuItem{
 	font-family: latolight;
 	position: absolute;
 	width: 200px;
@@ -127,9 +135,12 @@ body {
 	background-color: #009688;
 	top: calc(50% - 100px);
 	z-index: 2;
-	border-radius: 50%;
+	border-radius: 5%;
 	text-align: center;
 	cursor: pointer;
+
+	transform-origin: 50% 50%;
+	transform: rotate(45deg);
 
 	transition: all 0.3s;
 	-webkit-transition: all 0.3s;
@@ -141,36 +152,41 @@ body {
 }
 
 .menuItem h1 {
+	text-align: center;
 	position: relative;
 	top: 50%;
-	transform: translateY(-50%);
+	transform-origin: 50% 50%;
+	transform: translateY(-50%) rotate(-45deg);
 	margin: 0px;
 	cursor: pointer;
 	pointer-events:none;
+
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
 }
 
 .visible#gamesItem {
-	background-color: #E53935;
-	top : calc(50% - 200px);
-	left: calc(50% + 100px);
+	background-color: #EF6C00;
+	top : calc(50% + 80px);
+	left: calc(50% + 80px);
 }
 
 .visible#artItem {
 	color: rgb(0, 0, 0, 0.87);
-	top : calc(50% + 100px);
-	left: calc(50% - 200px);
-	background-color: #45F365;
+	top : calc(50% + 80px);
+	left: calc(50% - 280px);
+	background-color: #E91E63;
 }
 
 .visible#progItem {
-	top : calc(50% + 0px);
-	left: calc(50% + 100px);
-	background-color: #424242;
+	top : calc(50% - 280px);
+	left: calc(50% + 80px);
+	background-color: #1E88E5;
 }
 
 .visible#persoItem {
-	top : calc(50% - 300px);
-	left: calc(50% - 200px);
+	top : calc(50% - 280px);
+	left: calc(50% - 280px);
 	background-color: #E53935;
 }
 
@@ -179,6 +195,31 @@ body {
 	left: calc(50% - 100px);
 }
 
+.menuItem.visible:hover {
+	transform:  rotate(90deg);
+}
+
+.menuItem.visible:hover h1{
+	transform: translateY(-50%) rotate(-90deg);
+}
+/*
+.visible#persoItem:hover {
+	background-color: #E57373;
+}
+
+.visible#progItem:hover {
+	background-color: #64B5F6;
+}
+
+.visible#gamesItem:hover {
+	background-color: #FFA726;
+}
+
+.visible#artItem:hover {
+	background-color: #F06292;
+}
+*/
+/*
 #persoItem {
 	transition: all 0.2s;
 	-webkit-transition: all 0.2s;
@@ -198,6 +239,7 @@ body {
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 }
+*/
 
 
 .myName {
@@ -214,8 +256,17 @@ body {
 	cursor: pointer;
 	pointer-events:none;
 
+	transform-origin: 50% 50%;
+	transform: rotate(0deg);
+
 	transform: translate(-50%, -50%);
 	z-index: 4;
+
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+	user-select: none;
+
 
 	transition: all 0.3s;
 	-webkit-transition: all 0.3s;
@@ -224,8 +275,10 @@ body {
 	overflow: hidden;
 }
 
-.bigCircle.active .myName {
+.myName.active {
+	font-size: 1.5em;
 	color: rgba(255, 255, 255, 0.5);
+	opacity: 1;
 }
 
 .visible {
