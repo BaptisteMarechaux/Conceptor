@@ -195,13 +195,18 @@ body {
 	left: calc(50% - 100px);
 }
 
-.menuItem.visible:hover {
-	transform:  rotate(90deg);
-}
 
+.menuItem.visible:hover {
+	transform:  rotate(45deg) scale(1.1);
+	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.6);
+	z-index: 5;
+}
+/*
 .menuItem.visible:hover h1{
 	transform: translateY(-50%) rotate(-90deg);
 }
+
+*/
 /*
 .visible#persoItem:hover {
 	background-color: #E57373;
