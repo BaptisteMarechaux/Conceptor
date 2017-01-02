@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ConceptorApp">
 <head>
 	<title>Conceptor</title>
 	<link rel="stylesheet" href="./public/style/index.css" />
-	<script src="./public/scripts/pf.js"></script>
+	<script src="./public/scripts/utils/angular.min.js"></script>
 	<meta charset="UTF-8">
 </head>
-<body>
-	<div id="centerButton" class="bigCircle inactive">
+<body ng-controller="ConceptorMainController as controller">
+	<div id="centerButton" ng-class="getBigCircleClass()" ng-click="clickOnBigCircle()">
 		
 	</div>
-	<div id="myName" class="myName inactive">BM</div>
+	<div id="myName" ng-class="getMyNameClass()">BM</div>
 	<div id="subCircle" class="subCircle"></div>
 
-	<div id="persoItem" class="menuItem hidden" onclick="window.location=('./public/views/cv.html')">
-		<h1>About</h1>
+	<div id="persoItem" ng-class="getMenuItemClass()" onclick="window.location=('./public/views/cv.html')" ng-mouseover="changeBackgroundColor('#E57373')">
+		<h1>About Me</h1>
 	</div>
 
-	<div id="progItem" class="menuItem hidden" onclick="window.location=('./public/views/programming.html')">
+	<div id="progItem" ng-class="getMenuItemClass()" onclick="window.location=('./public/views/programming.html')" ng-mouseover="changeBackgroundColor('#64B5F6')">
 		<h1>Programming</h1>
 	</div>
 
-	<div id="gamesItem" class="menuItem hidden">
+	<div id="gamesItem" ng-class="getMenuItemClass()" ng-mouseover="changeBackgroundColor('#FFA726')">
 		<h1>Games</h1>
 	</div>
 
-	<div id="artItem" class="menuItem hidden">
+	<div id="artItem" ng-class="getMenuItemClass()" ng-mouseover="changeBackgroundColor('#F06292')">
 		<h1>Art</h1>
 	</div>
 	
