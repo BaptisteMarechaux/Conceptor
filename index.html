@@ -7,28 +7,42 @@
 	<meta charset="UTF-8">
 </head>
 <body ng-controller="ConceptorMainController as controller">
-	<div id="centerButton" ng-class="getBigCircleClass()" ng-click="clickOnBigCircle()">
+	<section ng-class="getMainSectionClass()">
+		<div id="centerButton" ng-class="getBigCircleClass()" ng-click="clickOnBigCircle()" ng-mouseover="onMouseOverBigCircle()" ng-mouseout="onMouseOutBigCircle()">
+			
+		</div>
+		<div id="myName" ng-class="getMyNameClass()">BM</div>
+		<div id="subCircle" class="subCircle"></div>
+
+		<div id="persoItem" ng-class="getMenuItemClass()" ng-click="showAboutMe()" ng-mouseover="changeBackgroundColor('#E57373')">
+			<h1>About Me</h1>
+		</div>
+
+		<div id="progItem" ng-class="getMenuItemClass()" onclick="window.location=('./public/views/programming.html')" ng-mouseover="changeBackgroundColor('#64B5F6')">
+			<h1>Programming</h1>
+		</div>
+
+		<div id="gamesItem" ng-class="getMenuItemClass()" ng-mouseover="changeBackgroundColor('#FFA726')">
+			<h1>Games</h1>
+		</div>
+
+		<div id="artItem" ng-class="getMenuItemClass()" ng-mouseover="changeBackgroundColor('#F06292')">
+			<h1>Art</h1>
+		</div>
+	</section>
+	<section ng-class="getAboutClass()">
 		
-	</div>
-	<div id="myName" ng-class="getMyNameClass()">BM</div>
-	<div id="subCircle" class="subCircle"></div>
+	</section>
+	<section ng-class="getProgrammingSectionClass">
+		
+	</section>
+	<section ng-class="getGamesSectionClass">
+		
+	</section>
+	<section ng-class="getArtSectionClass">
+		
+	</section>
 
-	<div id="persoItem" ng-class="getMenuItemClass()" onclick="window.location=('./public/views/cv.html')" ng-mouseover="changeBackgroundColor('#E57373')">
-		<h1>About Me</h1>
-	</div>
-
-	<div id="progItem" ng-class="getMenuItemClass()" onclick="window.location=('./public/views/programming.html')" ng-mouseover="changeBackgroundColor('#64B5F6')">
-		<h1>Programming</h1>
-	</div>
-
-	<div id="gamesItem" ng-class="getMenuItemClass()" ng-mouseover="changeBackgroundColor('#FFA726')">
-		<h1>Games</h1>
-	</div>
-
-	<div id="artItem" ng-class="getMenuItemClass()" ng-mouseover="changeBackgroundColor('#F06292')">
-		<h1>Art</h1>
-	</div>
-	
 	<script src="./public/scripts/index.js"></script>
 </body>
 </html>

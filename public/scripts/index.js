@@ -8,6 +8,16 @@ angular.module('ConceptorApp', [])
 
 	var bigCircleClicked = false;
 	var centerButtonHovered = false;
+	var state = {
+		main : 0, 
+		about : 1,
+		games : 2,
+		prog : 3,
+		art : 4
+	};
+	var appState = state.main;
+
+	//Scope Functions
 
 	$scope.clickOnBigCircle = function() {
 		bigCircleClicked = !bigCircleClicked;
@@ -15,6 +25,47 @@ angular.module('ConceptorApp', [])
 			showMenuItems();
 		else
 			hideMenuItems();
+	};
+
+	$scope.onMouseOverBigCircle = function() {
+		centerButtonHovered = true;
+		if(!bigCircleClicked)
+			document.body.style.backgroundColor = "rgba(239, 108, 0, 0.4)";
+	};
+
+	$scope.onMouseOutBigCircle = function() {
+		centerButtonHovered = false;
+		if(!bigCircleClicked)
+			document.body.style.backgroundColor = "rgba(255, 255, 255, 0)";
+	};
+
+	$scope.changeBackgroundColor = function(color)
+	{
+		console.log("ChangeColor");
+		document.body.style.backgroundColor = color;
+	};
+
+	$scope.showAboutMe = function() {
+		appState = state.about;
+	};
+
+	$scope.showProgramming = function() {
+
+	};
+
+	$scope.showGames = function() {
+
+	};
+
+	$scope.showArt = function() {
+
+	}
+
+
+	//Style Classes
+
+	$scope.getMainSectionClass = function() {
+		return "";
 	};
 
 	$scope.getBigCircleClass = function() {
@@ -36,12 +87,18 @@ angular.module('ConceptorApp', [])
 		}
 	};
 
-	$scope.changeBackgroundColor = function(color)
-	{
-		console.log("ChangeColor");
-		document.body.style.backgroundColor = color;
-	};
+	$scope.getAboutClass = function() {
+		if(appState == state.about)
+		{
+			return "aboutSection"
+		}
+		else
+		{
+			return "aboutSection hidden"
+		}
+	}
 
+	//Private functions
 
 	function showMenuItems() {
 		centerButton.style.webkitTransform = "";
@@ -63,15 +120,4 @@ angular.module('ConceptorApp', [])
 		document.body.style.backgroundColor = "rgba(255, 255, 255, 0)";
 	}
 
-	centerButton.addEventListener("mouseover", function() {
-		centerButtonHovered = true;
-		if(!bigCircleClicked)
-			document.body.style.backgroundColor = "rgba(239, 108, 0, 0.4)";
-	});
-
-	centerButton.addEventListener("mouseout", function() {
-		centerButtonHovered = false;
-		if(!bigCircleClicked)
-			document.body.style.backgroundColor = "rgba(255, 255, 255, 0)";
-	});
 });
