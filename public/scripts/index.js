@@ -76,10 +76,18 @@ angular.module('ConceptorApp', [])
 		return bigCircleClicked ? "myName active" : "myName inactive";
 	};
 
-	$scope.getMenuItemClass = function() {
+	$scope.getMenuItemClass = function(index) {
 		if(bigCircleClicked)
 		{
-			return "menuItem visible";
+			if(appState == state.about && index == 1)
+			{
+				return "menuItem visible selected";
+			}
+			else
+			{
+				return "menuItem visible";
+			}
+			
 		}
 		else
 		{
@@ -96,7 +104,48 @@ angular.module('ConceptorApp', [])
 		{
 			return "aboutSection hidden"
 		}
-	}
+	};
+
+	$scope.getProgrammingSectionClass = function() {
+		if(appState == state.prog)
+		{
+			return "programmingSection"
+		}
+		else
+		{
+			return "programmingSection hidden"
+		}
+	};
+
+	$scope.getGamesSectionClass = function() {
+		if(appState == state.games)
+		{
+			return "gamesSection"
+		}
+		else
+		{
+			return "gamesSection hidden"
+		}
+	};
+
+	$scope.getArtSectionClass = function() {
+		if(appState == state.art)
+		{
+			return "artSection"
+		}
+		else
+		{
+			return "artSection hidden"
+		}
+	};
+
+	$scope.goBack = function () {
+		console.log("goBack");
+		if(appState != state.main)
+		{
+			appState = appState.main;
+		}
+	};
 
 	//Private functions
 
