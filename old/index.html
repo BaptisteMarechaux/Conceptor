@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="ConceptorApp">
+<head>
+	<title>Conceptor</title>
+	<link rel="stylesheet" href="./public/style/index.css" />
+	<script src="./public/scripts/utils/angular.min.js"></script>
+	<meta charset="UTF-8">
+</head>
+<body ng-controller="ConceptorMainController as controller">
+	<section ng-class="getMainSectionClass()">
+		<div id="centerButton" ng-class="getBigCircleClass()" ng-click="clickOnBigCircle()" ng-mouseover="onMouseOverBigCircle()" ng-mouseout="onMouseOutBigCircle()">
+			
+		</div>
+		<div id="myName" ng-class="getMyNameClass()">BM</div>
+		<div id="subCircle" class="subCircle"></div>
+
+		<div id="persoItem" ng-class="getMenuItemClass(1)" ng-click="showAboutMe()" ng-mouseover="changeBackgroundColor('#E57373')">
+			<h1>About Me</h1>
+		</div>
+
+		<div id="progItem" ng-class="getMenuItemClass(2)" ng-click="showProgramming()" ng-mouseover="changeBackgroundColor('#64B5F6')">
+			<h1>Programming</h1>
+		</div>
+
+		<div id="gamesItem" ng-class="getMenuItemClass(3)" ng-click="showGames()" ng-mouseover="changeBackgroundColor('#FFA726')">
+			<h1>Games</h1>
+		</div>
+
+		<div id="artItem" ng-class="getMenuItemClass(4)" ng-click="showArt()" ng-mouseover="changeBackgroundColor('#F06292')">
+			<h1>Art</h1>
+		</div>
+	</section>
+	<section ng-class="getAboutClass()">
+		<div class="backButtonContainer"><button ng-click="goBack()"><img src="./public/img/icons/ic_arrow_back_white_48dp_1x.png"></button>Back</div>
+		<p>
+			I'm Baptiste Maréchaux, a Developper...and a little more than that.
+			<br>
+			I like 3D programming and UX, UI and Digital Art
+		</p>
+		<h1>Education</h1>
+		<div class="educationPoint">ESGI</div>
+		<div class="educationPoint">ICAN</div>
+		<div class="educationPoint">Other</div>
+
+		<div class="sectionFooter">
+			<div class="smallMenuItem">Prog</div>
+			<div class="smallMenuItem">Games</div>
+			<div class="smallMenuItem">Art</div>
+		</div>
+	</section>
+	<section ng-class="getProgrammingSectionClass()">
+		<div class="backButtonContainer"><button ng-click="goBack()"><img src="./public/img/icons/ic_arrow_back_white_48dp_1x.png"></button>Back</div>
+		<h1>Programming</h1>
+	    <div>
+	        <h2>2016</h2>
+	        <ul class="yearProjectList">
+	            <li>This Website</li>
+	            <li>3D Extrusion</li>
+	            <li>Curves</li>
+	            <li>Boids</li>
+	            <li>Obj Loader OpenGL</li>
+	        </ul>
+	        <h2>2015</h2>
+	        <ul class="yearProjectList">
+	            <li>Clipping & Filling</li>
+	            <li>Semi-Automatic Rigging</li>
+	            <li>Quauntic Colored Dream</li>
+	            <li>Blender 3D terrain generator</li>
+	        </ul>
+	        <h2>2014</h2>
+
+	    </div>
+	</section>
+	<section ng-class="getGamesSectionClass()">
+		
+	</section>
+	<section ng-class="getArtSectionClass()">
+		
+	</section>
+
+	<script src="./public/scripts/index.js"></script>
+</body>
+</html>

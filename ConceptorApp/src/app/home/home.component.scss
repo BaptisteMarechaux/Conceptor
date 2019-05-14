@@ -1,0 +1,18 @@
+:host{
+	display:flex;
+	flex-direction:column;
+	flex:1 0 auto;
+	align-items:stretch;
+}
+
+.mainSection {
+	flex : 1 1 auto;
+}
+
+.titleSection {
+	display: flex;
+	flex-direction: line;
+	
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
